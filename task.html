@@ -1,0 +1,176 @@
+<html>
+<head>
+    <title>
+
+        Even or Not.....
+    </title>
+    <style>
+    .box{
+        height:auto;
+        width: 500px;
+        border: 5px solid rgb(95, 131, 27);
+        padding: 20px;
+        font-size: 22px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 40px;
+        background-color: rgb(153, 124, 124);
+    }
+    
+    #btn1, #btn2,#btn3,#btn4{
+        font-size: 23px;
+        color:hotpink;
+        background-color: khaki;
+        padding: 10px;
+        border-radius: 100px;
+    }
+    #nb{
+
+        font-size: 24px;
+        border: none;
+        border-bottom: 5px solid goldenrod;
+        background: transparent ;
+    }
+    .mod{
+        padding: 30px;
+        height: auto;
+        width: 90%;
+        border: 5px solid gray;
+        background-color: wheat;
+        border-radius: 100px;
+        margin:auto;
+
+    }
+    #btn1:hover,   #btn2:hover,    #btn3:hover, #btn4:hover {
+     background-color: rgb(101, 233, 89);
+    }
+    #nb:hover{
+        border-bottom:5px dotted greenyellow ;
+    }
+    .box2{
+        padding:20px;
+        border: 5px solid gray;
+        background-color: wheat;
+        font-size:20px;
+        height: auto;
+        width:500px;
+        margin-top:50px;
+        margin-bottom: 100px;
+        margin-left:auto;
+        margin-right: auto;
+        border-radius: 50px;
+    }
+ #nb1, #nb2{
+
+ }
+        </style>
+    <script>
+  
+
+        function palin()
+        {
+            var string = document.getElementById('nb').value;
+            if (string == string.split('').reverse().join('')) {
+        document.getElementById("demo").innerHTML =  "Enter <span style='color:red'> "+ string +"</span>  is a palindrome.";
+     
+    }
+    else {
+
+        document.getElementById("demo").innerHTML = "Enter  <span style='color:red'>  "+ string +" </span> is not a palindrome.";
+       }
+        }
+
+
+
+
+            function even(){
+               var n = document.getElementById("nb").value;
+                 if(n%2 == 0){
+                   document.getElementById("demo").innerHTML= "Given number " + n + " is Even";
+                           }
+             else{
+                 document.getElementById("demo").innerHTML = "Given Number " + n + " is Odd";
+                 }
+            }
+
+ function prime(){
+    var n = document.getElementById("nb").value;
+     var  i;
+     var  flag = 0;
+
+
+    for (i = 2; i <= n / 2; ++i) {
+
+        // condition for non-prime
+        if (n % i == 0) {
+            flag = 1;
+            break;
+        }
+    }
+
+    if (n == 1) {
+        document.getElementById("demo").innerHTML = " 1 is neither prime nor composite.";
+    }
+    else {
+        if (flag == 0)
+        document.getElementById("demo").innerHTML= + n + " is a prime number.";
+        else
+        document.getElementById("demo").innerHTML =+ n +" is not a prime number.";
+    }
+ }
+ 
+function fib(){
+    var f_n=0, s_n= 1, nxt;
+    var n = document.getElementById("nb").value;
+    if(n != 0){
+        document.getElementById("demo").innerHTML = "";
+            
+        document.getElementById("demo").innerHTML += f_n +"&nbsp;";
+        document.getElementById("demo").innerHTML += s_n+ "&nbsp";
+            
+        while(n>2){
+            nxt = f_n + s_n;
+            f_n = s_n;
+            s_n = nxt;
+          document.getElementById("demo").innerHTML += nxt +"&nbsp;";
+            n--;
+        }
+    }
+}
+
+   
+ 
+
+       
+        </script>
+    
+
+</head>
+
+<body style="background-color: rgb(69, 173, 221);">
+    <div class="box">
+       <span style="color:wheat"> Number:</span> <br><br>
+        <input  type="text" placeholder="Enter a Number " id="nb" name="nb"  value="" required><br><br>
+        <input type="button" value="To Check Even or NOt" onclick="even()" id="btn1"><br><br>
+        <input type="button" value="To Check Prime or NOt" onclick="prime()" id="btn2"><br><br>
+        <input type="button" value="To Print Fibonacci Series" onclick="fib()" id="btn3"><br><br>
+       <input type="button" value=" To Check  Palindrome or Not" onclick="palin()"  id="btn4"><br><br>
+    </div>
+    <div class="mod">
+            <h1 style="color:rgb(126, 21, 21) ; border-bottom: 3px dashed violet;">Out Put.....</h1>
+            <h2 id="demo" style="color:green"></h2>
+    </div>
+       
+    <div class="box2">
+        <input type="text" placeholder="Enter value1" value="" id="nb1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" placeholder="Enter value2" value="" id="nb2"><br><br>
+        <input type="button" value="addition" onclick="calc()" id="opr">
+        <input type="button" value="subtraction" onclick="calc()" id="opr"><br>
+        <input type="button" value="Multiplication" onclick="calc()" id="opr">
+        <input type="button" value="Division"  onclick="calc()"  id="opr"><br>
+        <input type="button"  value="Modulation" onclick="calc()"  id="opr"> 
+       </div>
+    </body> 
+</html>
