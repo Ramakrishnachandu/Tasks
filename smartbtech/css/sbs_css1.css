@@ -1,0 +1,68 @@
+.sbs-login{
+        background:url(../images/login.jpg);
+        background-size: cover;
+        margin:0px;
+        padding:0px;
+        height: 700px;
+  
+}
+.sbs-login-box{
+height:580px;
+width:380px;
+box-shadow: 3px solid grey;
+padding:70px 30px;
+margin-left:70%;
+margin-top:60px;
+color:#000;
+position: absolute;
+border: 2px solid gray;
+border-radius: 20px;
+}
+
+.sbs-login-box input{
+    width:100%;
+    margin-bottom:14px;
+
+}
+.sbs-login-box h1{
+    margin-top:2px;
+    padding:0px 0px 20px;
+    font-weight: 22px;
+    color:rgba(255, 0, 0, 0.747);
+}
+.sbs-login-box{
+    margin-bottom: 30px;
+}
+.sbs-login-box input[type="text"],input[type="password"],input[type="email"],input[type="mobile"]{
+    border:none;
+    border-bottom:3px solid rgb(84, 253, 5); 
+    background: transparent;
+    outline:none;
+    height:42px;
+}
+.sbs-login-box input[type="submit"]{
+color:green;
+height: 40px;
+width:150px;
+font-size: 22px;
+font-weight: bold;
+margin-top:20px;
+background:transparent;
+border-radius: 2px solid gray;
+}
+.sbs-login-box input[type="submit"]:hover{
+    background-color: rgb(92, 245, 105);
+    cursor: pointer;
+}
+.glyphicon-user{
+height: 22px;
+}
+.sbs-login-box a{
+    font-size:20px;
+    font-weight: bold;
+    text-decoration: none;
+    color:rgb(13, 23, 168)
+}
+.sbs-login-box a:hover{
+    color:rgb(136, 6, 6);
+}
