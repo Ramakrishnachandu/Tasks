@@ -1,0 +1,186 @@
+<html>
+<head>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body{
+        background-color: skyblue;
+    }
+    .fa{
+        color:gray;
+        font-size: 50px;
+        cursor: pointer;
+    }
+.fa-thumbs-up:hover{
+    color:rgb(37, 167, 37);
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.fa-thumbs-down:hover{
+    color:rgb(170, 42, 42);
+    font-size: 50px;
+    cursor: pointer;
+}
+     img{
+    background-repeat: no-repeat;
+    height:420px;
+    width:830px;
+    border-radius: 16px;   
+}
+.container{
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-bottom: 100px;
+    margin-top:100px;
+    padding:10px;
+    border: 5px solid brown;
+    background-color: wheat;
+    height: auto;
+    width: 840px;
+    box-shadow:10px solid black;
+}
+
+.form-con{
+    margin-left:auto;
+    margin-right:auto;
+    padding: 50px;
+    font-size: 20px;
+    color: hotpink;
+    border-radius: 20px;
+    background-color: lavenderblush;
+    width: 380px;
+    height: auto;
+}
+
+#fname, #pass, #re_pass{
+    background-color: transparent;
+    border:none;
+    margin-top:5px;
+    padding:4px;
+    width: 300px;
+    margin-bottom: 5px;
+    border-bottom: 4px solid rgb(192, 143, 199);
+    height: 50px;
+    font-size:21px;
+}
+::placeholder{
+    font-size:20px;
+    padding: 4px;
+
+}
+input[type = submit]
+{
+    color:green;
+    font-size: 18px;
+    font-style: bold;
+    padding: 4px;
+    cursor: pointer;
+
+}
+
+input[type = submit]:hover
+{
+    color:green;
+    font-size: 18px;
+    font-style: bold;
+    padding: 4px;
+    cursor: pointer;
+}
+
+input[type = reset]
+{
+    color:red;
+    font-size: 18px;
+    font-style: bold;
+    padding: 4px;
+    cursor: pointer;
+}
+
+input[type = reset]
+{
+    color:red;
+    cursor: pointer;
+    font-size: 18px;
+    font-style: bold;
+    padding: 4px;
+    
+}
+</style>
+
+
+
+<script>
+    var like = 143;
+    var dislike = 72;
+
+function likeMe(){
+
+
+        document.getElementById("like_id").innerHTML= (like + 1);
+        document.getElementById("dislike_id").innerHTML= dislike;
+    
+}
+function dislikeMe(){
+    
+     document.getElementById("dislike_id").innerHTML= (dislike + 1);
+     document.getElementById("like_id").innerHTML= like;
+    
+}
+
+
+
+function Submit_data(){
+    var re_pass = document.getElementById("re_pass").value;
+     var fname = document.getElementById("fname").value;
+     
+     var pass = document.getElementById("pass").value;
+     
+         if (pass == re_pass){
+         
+            document.getElementById("error").innerHTML = "";
+     
+           alert("welcome Mr./Mis " + fname +"<br></br> Your Name is "+fname+" <br> And Your Password is "+pass);
+  
+           }
+         else{
+            document.getElementById("error").innerHTML = "Your Passwpord is Missmatch";
+     }
+    }
+    </script>
+
+</head>
+<body>
+   <div  class="container">
+       <div class="nature">
+           <img src="nature.jpg" alt="nature Photo">
+           <div class="like_dislike">
+ <p style="font-size: 18px;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green; font-size:20px"><b>"Nature"</b></span> refers to the phenomena of the physical world, and also to life in general. ... The term is often refers to the "natural environment" or wilderness—wild animals, rocks, forest, beaches, and in general areas that have not been substantially altered by humans, or which persist despite human intervention</p>
+            <i onclick="likeMe()" class="fa fa-thumbs-up"></i>
+
+    <span style="color: green; font-size: 18px;"id="like_id">143</span> &nbsp;&nbsp;
+    <i onclick="dislikeMe()" class="fa fa-thumbs-down"></i>
+    <span style="color: red; font-size: 18px;" id="dislike_id">72</span>
+  
+           </div>
+       </div>
+   </div>  
+   <div class="form-con">
+       <div class="form">
+                <label for="fanme">Full Name:</label><br>
+           <input type="text" placeholder="Enter Your Name " id="fname" value="" name="fname" required>
+          <br><label for="password">Password:</label> <br>
+          <input type="password" placeholder="Enter Password" id="pass" value="" name="pass" required>
+          <br><label for="re-password">Re-Password:</label>
+           <br><input   type="text" onfocus="passValidation()" placeholder="Re-Enter Password" value="" id="re_pass" name="re-pass" required>
+           <br><p style="color:red; font-size:12px"  id="error"></p>
+           <input onclick="Submit_data()" type="submit" value="Submit">
+           <input type="reset" value="Cancel">
+       </div>
+   </div>  
+</body>
+</html> 
+
+
+
